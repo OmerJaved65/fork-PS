@@ -46,7 +46,11 @@ function MetamaskProvider({ children }: { children: JSX.Element }): JSX.Element 
 function App() {
   return (
     <div className="App">
-      <HomePage />
+      <Web3ReactProvider getLibrary={getLibrary} >
+        <MetamaskProvider>
+          <HomePage />
+        </MetamaskProvider>
+      </Web3ReactProvider>
     </div>
   );
 }
